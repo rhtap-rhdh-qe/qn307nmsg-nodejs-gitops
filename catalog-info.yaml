@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: qn307nmsg-nodejs-gitops
+  description: This is GitOps manifest for qn307nmsg-nodejs   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=qn307nmsg-nodejs
+    backstage.io/kubernetes-id: qn307nmsg-nodejs 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: qn307nmsg-nodejs
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:qn307nmsg-nodejs
